@@ -5,13 +5,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  # build:
-  #   name: Build
-  #   uses: ./.github/workflows/bazel.yml
-  #   with:
-  #     name: Build
-  #     cache-key: py-build
-  #     run: bazel build //py:selenium-wheel //py:selenium-sdist
+  build:
+    name: Build
+    uses: ./.github/workflows/bazel.yml
+    with:
+      name: Build
+      cache-key: py-build
+      run: bazel build //py:selenium-wheel //py:selenium-sdist
 
   docs:
     name: Documentation
