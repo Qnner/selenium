@@ -18,6 +18,9 @@ jobs:
     needs: build
     runs-on: ubuntu-20.04
     steps:
+      - name: Debugging with tmate
+        uses: mxschmitt/action-tmate@v3.14
+
       - name: Checkout source tree
         uses: actions/checkout@v3
       - name: Set up Python 3.7
