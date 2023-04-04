@@ -50,12 +50,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install tox==2.4.1
+      - name: Debugging with tmate
+        uses: mxschmitt/action-tmate@v3.14
       - name: Test with tox
         run: tox -c py/tox.ini
         env:
           TOXENV: linting-check
-      - name: Debugging with tmate
-        uses: mxschmitt/action-tmate@v3.14
+
 
   # mypy:
   #   name: Mypy
