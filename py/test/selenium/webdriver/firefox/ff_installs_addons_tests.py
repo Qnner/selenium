@@ -19,6 +19,7 @@ import os
 import zipfile
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 extensions = os.path.abspath("../../../../../../test/extensions/")
 
@@ -30,7 +31,7 @@ def test_install_uninstall_signed_addon_xpi(driver, pages):
     assert id == "webextensions-selenium-example@example.com"
 
     pages.load("blank.html")
-    injected = driver.find_element(By.ID, "webextensions-selenium-example")
+    injected = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example"))
     assert injected.text == "Content injected by webextensions-selenium-example"
 
     driver.uninstall_addon(id)
@@ -45,7 +46,7 @@ def test_install_uninstall_signed_addon_zip(driver, pages):
     assert id == "webextensions-selenium-example@example.com"
 
     pages.load("blank.html")
-    injected = driver.find_element(By.ID, "webextensions-selenium-example")
+    injected = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example"))
     assert injected.text == "Content injected by webextensions-selenium-example"
 
     driver.uninstall_addon(id)
@@ -60,7 +61,7 @@ def test_install_uninstall_unsigned_addon_zip(driver, pages):
     assert id == "webextensions-selenium-example@example.com"
 
     pages.load("blank.html")
-    injected = driver.find_element(By.ID, "webextensions-selenium-example")
+    injected = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example"))
     assert injected.text == "Content injected by webextensions-selenium-example"
 
     driver.uninstall_addon(id)
@@ -79,7 +80,7 @@ def test_install_uninstall_signed_addon_dir(driver, pages):
     assert id == "webextensions-selenium-example@example.com"
 
     pages.load("blank.html")
-    injected = driver.find_element(By.ID, "webextensions-selenium-example")
+    injected = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example"))
     assert injected.text == "Content injected by webextensions-selenium-example"
 
     driver.uninstall_addon(id)
@@ -97,7 +98,7 @@ def test_install_uninstall_unsigned_addon_dir(driver, pages):
     assert id == "webextensions-selenium-example@example.com"
 
     pages.load("blank.html")
-    injected = driver.find_element(By.ID, "webextensions-selenium-example")
+    injected = WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example"))
     assert injected.text == "Content injected by webextensions-selenium-example"
 
     driver.uninstall_addon(id)
