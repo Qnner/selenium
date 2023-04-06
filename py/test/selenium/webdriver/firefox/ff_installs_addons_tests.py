@@ -37,8 +37,8 @@ def test_install_uninstall_signed_addon_xpi(driver, pages):
 
     driver.uninstall_addon(id)
     driver.refresh()
-    # assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
-    assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
+    assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
+    # assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
 
 
 def test_install_uninstall_signed_addon_zip(driver, pages):
@@ -54,8 +54,8 @@ def test_install_uninstall_signed_addon_zip(driver, pages):
 
     driver.uninstall_addon(id)
     driver.refresh()
-    # assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
-    assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
+    assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
+    # assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
 
 
 def test_install_uninstall_unsigned_addon_zip(driver, pages):
@@ -71,8 +71,8 @@ def test_install_uninstall_unsigned_addon_zip(driver, pages):
 
     driver.uninstall_addon(id)
     driver.refresh()
-    # assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
-    assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
+    assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
+    # assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
 
 
 def test_install_uninstall_signed_addon_dir(driver, pages):
@@ -93,8 +93,8 @@ def test_install_uninstall_signed_addon_dir(driver, pages):
 
     driver.uninstall_addon(id)
     driver.refresh()
-    # assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
-    assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
+    assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
+    # assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
 
 
 def test_install_uninstall_unsigned_addon_dir(driver, pages):
@@ -114,5 +114,5 @@ def test_install_uninstall_unsigned_addon_dir(driver, pages):
 
     driver.uninstall_addon(id)
     driver.refresh()
-    # assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
-    assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
+    assert len(driver.find_elements(By.ID, "webextensions-selenium-example")) == 0
+    # assert WebDriverWait(driver, 10).until(lambda x: x.find_element(By.ID, "webextensions-selenium-example") == [])
